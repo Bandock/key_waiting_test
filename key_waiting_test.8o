@@ -1,0 +1,83 @@
+# Key Waiting Test
+# By Joshua Moss (Bandock)
+
+: main
+v1 := 10
+v2 := 14
+v3 := 5
+v4 := 6
+v5 := 1
+i := press_key
+print_message
+v0 := key
+clear
+v1 := 28
+V2 := 14
+if v0 -key then passed_test
+i := failed
+sprite v1 v2 5
+loop
+again
+: passed_test
+i := passed
+sprite v1 v2 5
+loop
+again
+
+: print_message
+loop
+sprite v1 v2 5
+v1 += 8
+i += v3
+v4 -= v5
+while v4 != 0
+again
+;
+
+: press_key
+0b11100111
+0b10010100
+0b11100111
+0b10000100
+0b10000100
+
+0b00111100
+0b10100001
+0b00111000
+0b10100000
+0b10111101
+
+0b11100111
+0b00001000
+0b11000110
+0b00100001
+0b11001110
+
+0b00010010
+0b00010100
+0b00011000
+0b00010100
+0b00010010
+
+0b11110100
+0b10000010
+0b11100001
+0b10000001
+0b11110001
+
+0b01000000
+0b10000000
+0b00000000
+0b00000000
+0b00000000
+
+
+: passed
+0b0001000
+0b0001000
+: failed
+0b1111000
+0b1111000
+0b1111000
+0b0001000
+0b0001000
